@@ -1,9 +1,5 @@
 package com.example.wuyiwen.wordbookms;
 
-/**
- * Created by wuyiwen on 2017/10/16.
- */
-
 import java.util.UUID;
 
 public class GUID {

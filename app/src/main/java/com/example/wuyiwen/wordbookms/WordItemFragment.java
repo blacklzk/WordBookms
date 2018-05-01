@@ -26,7 +26,6 @@ public class WordItemFragment extends ListFragment {
 
     private OnFragmentInteractionListener mListener;
 
-    // TODO: Rename and change types of parameters
     public static WordItemFragment newInstance() {
         WordItemFragment fragment = new WordItemFragment();
         Bundle args = new Bundle();
@@ -35,10 +34,6 @@ public class WordItemFragment extends ListFragment {
         return fragment;
     }
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public WordItemFragment() {
     }
 
@@ -54,13 +49,6 @@ public class WordItemFragment extends ListFragment {
         registerForContextMenu(mListView);
         return view;
     }
- /*
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        mListener = (WordDetailFragment.OnFragmentInteractionListener) getActivity();
-
-    }*/
 
 
     @Override
@@ -68,7 +56,6 @@ public class WordItemFragment extends ListFragment {
         Log.v(TAG, "WordItemFragment::onAttach");
         super.onAttach(context);
         mListener = (OnFragmentInteractionListener) getActivity();
-
     }
 
     //更新单词列表，从数据库中找到所有单词，然后在列表中显示出来
@@ -189,13 +176,10 @@ public class WordItemFragment extends ListFragment {
         }
     }
 
-    /**
-     * Fragment所在的Activity必须实现该接口，通过该接口Fragment和Activity可以进行通信
-     */
+
+     // Fragment所在的Activity必须实现该接口，通过该接口Fragment和Activity可以进行通信
     public interface OnFragmentInteractionListener {
         public void onWordItemClick(String id);
-
-
 
         public void onDeleteDialog(String strId);
 

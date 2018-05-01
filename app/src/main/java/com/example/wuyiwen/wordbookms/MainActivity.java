@@ -22,21 +22,13 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
         WordDetailFragment.OnFragmentInteractionListener {
     private static final String TAG = "myTag";
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
     }
 
     @Override
@@ -45,11 +37,8 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
         WordsDB wordsDB=WordsDB.getWordsDB();
         if (wordsDB != null)
             wordsDB.close();
-
     }
 
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -88,22 +77,18 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
         return super.onOptionsItemSelected(item);
     }
 
-
-    /**
-     * 更新单词列表
-     */
+//更新单词列表
     private void RefreshWordItemFragment() {
         WordItemFragment wordItemFragment = (WordItemFragment) getFragmentManager().findFragmentById(R.id.wordslist);
         wordItemFragment.refreshWordsList();
     }
 
-    /**
-     * 更新单词列表
-     */
+//更新单词列表
     private void RefreshWordItemFragment(String strWord) {
         WordItemFragment wordItemFragment = (WordItemFragment) getFragmentManager().findFragmentById(R.id.wordslist);
         wordItemFragment.refreshWordsList(strWord);
     }
+
 
 
     //新增对话框
@@ -128,7 +113,6 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
                         //单词已经插入到数据库，更新显示列表
                         RefreshWordItemFragment();
 
-
                     }
                 })
                 //取消按钮及其动作
@@ -140,8 +124,6 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
                 })
                 .create()//创建对话框
                 .show();//显示对话框
-
-
     }
 
 
@@ -233,21 +215,16 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
 
     }
 
-    /**
-     * 当用户在单词详细Fragment中单击时回调此函数
-     */
+
+     //当用户在单词详细Fragment中单击时回调此函数
     @Override
     public void onWordDetailClick(Uri uri) {
-
     }
 
-    /**
-     * 当用户在单词列表Fragment中单击某个单词时回调此函数
-     * 判断如果横屏的话，则需要在右侧单词详细Fragment中显示
-     */
+
+     //当用户在单词列表Fragment中单击某个单词时回调此函数,判断如果横屏的话，则需要在右侧单词详细Fragment中显示
     @Override
     public void onWordItemClick(String id) {
-
         if(isLand()) {//横屏的话则在右侧的WordDetailFragment中显示单词详细信息
             ChangeWordDetailFragment(id);
         }else{
@@ -255,8 +232,8 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
             intent.putExtra(WordDetailFragment.ARG_ID, id);
             startActivity(intent);
         }
-
     }
+
 
     //是否是横屏
     private boolean isLand(){
@@ -285,14 +262,11 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
         WordsDB wordsDB=WordsDB.getWordsDB();
         if (wordsDB != null && strId != null) {
 
-
             Words.WordDescription item = wordsDB.getSingleWord(strId);
             if (item != null) {
                 UpdateDialog(strId, item.word, item.meaning, item.sample);
             }
-
         }
-
     }
 
     public void onAnotherDialog(String strId){
@@ -304,7 +278,6 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
                 intent.putExtra("0",item.word);
                 startActivity(intent);
             }
-
         }
     }
 }

@@ -15,10 +15,10 @@ public class WordsDBHelper extends SQLiteOpenHelper {
     private final static String DATABASE_NAME = "wordsdb";//数据库名字
     private final static int DATABASE_VERSION = 1;//数据库版本
 
-    /**
-     *建表SQL
-     * 表： Words.Word.TABLE_NAME
-     * 该表中共4个字段：_ID,COLUMN_NAME_WORD,COLUMN_NAME_MEANING,COLUMN_NAME_SAMPLE
+
+     /*建表SQL
+      表： Words.Word.TABLE_NAME
+      该表中共4个字段：_ID,COLUMN_NAME_WORD,COLUMN_NAME_MEANING,COLUMN_NAME_SAMPLE
      */
 
     private final static String SQL_CREATE_DATABASE = "CREATE TABLE " + Words.Word.TABLE_NAME + " (" +

@@ -11,10 +11,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by wuyiwen on 2017/10/17.
- */
-
 public class WordsDB {
     private static final String TAG = "myTag";
 
@@ -87,7 +83,6 @@ public class WordsDB {
 
         return ConvertCursor2WordList(c);
     }
-
 
 
     //将游标转化为单词列表

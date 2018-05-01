@@ -1,9 +1,5 @@
 package com.example.wuyiwen.wordbookms;
 
-/**
- * Created by wuyiwen on 2017/10/18.
- */
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.net.Uri;
@@ -25,14 +21,6 @@ public class WordDetailFragment extends Fragment {
     private OnFragmentInteractionListener mListener;//本Fragment所在的Activity
 
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param wordID Parameter 1.
-     * @return A new instance of fragment WordDetailFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static WordDetailFragment newInstance(String wordID) {
         WordDetailFragment fragment = new WordDetailFragment();
         Bundle args = new Bundle();
@@ -50,7 +38,6 @@ public class WordDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mID = getArguments().getString(ARG_ID);
-
         }
     }
 
@@ -85,25 +72,11 @@ public class WordDetailFragment extends Fragment {
         return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onWordDetailClick(uri);
         }
     }
-
-    /*public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        mListener = (OnFragmentInteractionListener) getActivity();
-
-    }*/
-/*
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        mListener = (OnFragmentInteractionListener) getActivity();
-
-    }*/
 
     @Override
     public void onDetach() {
@@ -111,18 +84,7 @@ public class WordDetailFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         public void onWordDetailClick(Uri uri);
 
     }
