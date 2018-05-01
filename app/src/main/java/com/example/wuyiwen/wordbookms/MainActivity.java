@@ -72,8 +72,6 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
                 return true;
 
         }
-
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -182,8 +180,6 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
                 })
                 .create()//创建对话框
                 .show();//显示对话框
-
-
     }
 
 

@@ -6,10 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.wuyiwen.wordbookms.wordcontract.Words;
 
-/**
- * Created by wuyiwen on 2017/10/17.
- */
-
 public class WordsDBHelper extends SQLiteOpenHelper {
 
     private final static String DATABASE_NAME = "wordsdb";//数据库名字
